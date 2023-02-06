@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_facebook/constants/palette.dart';
 import 'package:flutter_facebook/constants/dimension.dart';
+import 'package:flutter_facebook/constants/palette.dart';
 import 'package:flutter_facebook/data/data.dart';
 import 'package:flutter_facebook/widgets/PostContainer.dart';
 import 'package:flutter_facebook/widgets/create_post_container.dart';
-import 'package:flutter_facebook/widgets/profile_avatar.dart';
 import 'package:flutter_facebook/widgets/rooms.dart';
 import 'package:flutter_facebook/widgets/stories.dart';
 
