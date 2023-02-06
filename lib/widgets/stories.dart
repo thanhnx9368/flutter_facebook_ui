@@ -23,7 +23,7 @@ class Stories extends StatelessWidget {
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-          itemCount: stories.length + 1,
+          itemCount: stories.length,
           itemBuilder: (BuildContext context, index) {
             final story = stories[index];
             return index == 0
@@ -61,7 +61,7 @@ class _StoryCard extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(12),
           child: CachedNetworkImage(
-              imageUrl: story.imageUrl,
+              imageUrl: isCurrentUser! ? currentUser.imageUrl : story.imageUrl,
               height: double.infinity,
               width: 110,
               fit: BoxFit.cover),
@@ -92,7 +92,10 @@ class _StoryCard extends StatelessWidget {
                   )
                 : ProfileAvatar(
                     imageUrl: story.imageUrl,
-                    hasBorder: !story.isViewed,
+                    hasBorder: true,
+                    borderColor: !story.isViewed
+                        ? Palette.facebookBlue
+                        : Colors.grey[500],
                   )),
         Positioned(
             bottom: 8,

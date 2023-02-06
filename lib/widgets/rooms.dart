@@ -14,7 +14,7 @@ class Rooms extends StatelessWidget {
       color: Colors.white,
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 12),
       child: ListView.builder(
-        itemCount: onlineUsers.length + 1,
+        itemCount: onlineUsers.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
           if (index == 0) {
@@ -48,8 +48,8 @@ class _ButtonCreateRoom extends StatelessWidget {
             ),
             padding: const EdgeInsets.symmetric(horizontal: 12)),
         onPressed: () => {},
-        child: Row(
-          children: const [
+        child: const Row(
+          children: [
             Icon(Icons.video_call),
             SizedBox(width: 4),
             Text('Create\nRoom')

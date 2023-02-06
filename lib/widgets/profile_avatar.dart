@@ -6,12 +6,14 @@ class ProfileAvatar extends StatelessWidget {
   final String imageUrl;
   final bool? active;
   final bool? hasBorder;
+  final Color? borderColor;
 
   const ProfileAvatar(
       {Key? key,
       required this.imageUrl,
       this.active = false,
-      this.hasBorder = false})
+      this.hasBorder = false,
+      this.borderColor})
       : super(key: key);
 
   @override
@@ -20,10 +22,10 @@ class ProfileAvatar extends StatelessWidget {
       children: [
         CircleAvatar(
             radius: 20.0,
-            backgroundColor: Palette.facebookBlue,
+            backgroundColor: borderColor ?? Palette.facebookBlue,
             child: CircleAvatar(
               radius: hasBorder! ? 18 : 20.0,
-              backgroundImage: CachedNetworkImageProvider(imageUrl, scale: 1.0),
+              backgroundImage: CachedNetworkImageProvider(imageUrl),
             )),
         active!
             ? Positioned(
